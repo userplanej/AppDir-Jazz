@@ -15,6 +15,11 @@ module.exports = {
       },
       {
         protocol: 'https',
+        hostname: 'images.unsplash.com',
+        pathname: '/**'
+      },
+      {
+        protocol: 'https',
         hostname: 'cdn.sanity.io',
         pathname: '/images/hhf1c6ej/production/**'
       }

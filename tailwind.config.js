@@ -3,6 +3,7 @@ const colors = require('tailwindcss/colors');
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ['class'],
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
@@ -11,6 +12,13 @@ module.exports = {
     './node_modules/@tremor/**/*.{js,ts,jsx,tsx}' // Tremor module
   ],
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px'
+      }
+    },
     transparent: 'transparent',
     current: 'currentColor',
     extend: {
@@ -105,6 +113,14 @@ module.exports = {
         'tremor-metric': ['1.875rem', { lineHeight: '2.25rem' }]
       },
       keyframes: {
+        'accordion-down': {
+          from: { height: 0 },
+          to: { height: 'var(--radix-accordion-content-height)' }
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: 0 }
+        },
         leapsIn: {
           '0%': { transform: 'translateX(0%)', opacity: 0.3 },
           '100% ': { transform: 'translate(20px, -50px)', opacity: 1.0 }
@@ -151,7 +167,9 @@ module.exports = {
         longStickyFadeIn: 'stickyFadeIn 6s ease-in-out',
         videoFadeIn: 'videoFadeIn 6s ease-in-out',
         carousel: 'marquee 10s linear infinite',
-        blink: 'blink 1.4s both infinite'
+        blink: 'blink 1.4s both infinite',
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out'
       },
 
       backgroundImage: {
