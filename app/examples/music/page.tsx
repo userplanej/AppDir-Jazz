@@ -20,9 +20,6 @@ export const metadata: Metadata = {
 };
 
 export default function MusicPage() {
-  console.log('listenNowAlbums : ');
-  console.log(JSON.stringify(listenNowAlbums));
-
   return (
     <>
       <div className="md:hidden">
